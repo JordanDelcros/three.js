@@ -92,10 +92,11 @@ class TubeGeometry extends BufferGeometry {
 			const B = frames.binormals[ i ];
 
 			// generate normals and vertices for the current segment
+			const segmentRadius = radialSegments <= 2 ? Math.PI : Math.PI * 2;
 
 			for ( let j = 0; j <= radialSegments; j ++ ) {
 
-				const v = j / radialSegments * Math.PI * 2;
+				const v = j / radialSegments * segmentRadius;
 
 				const sin = Math.sin( v );
 				const cos = - Math.cos( v );
